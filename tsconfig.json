@@ -9,6 +9,7 @@
     "noLib": false
   },
   "exclude": [
+    "dist",
     "node_modules"
   ]
 }

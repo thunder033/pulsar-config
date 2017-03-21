@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Shared values and functionality for pulsar-api and pulsar-ui
  * Created by gjrwcs on 3/21/2017.
