@@ -6,8 +6,8 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "start": "node ./src/app.js",
-    "build": "npm run srcCompile && grunt build-prod",
-    "srcCompile": "cd src && tsc -p . && cd ..",
+    "build": "npm run srcCompile",
+    "srcCompile": "tsc -p .",
     "pretest": "tslint \"src/**/*.ts\" \"test/**/*.ts\" && tsc -p ./",
     "test": "./node_modules/.bin/mocha --reporter spec test/**/*.js",
     "preversion": "npm test",
