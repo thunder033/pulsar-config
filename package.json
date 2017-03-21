@@ -9,7 +9,7 @@
     "build": "npm run srcCompile",
     "srcCompile": "tsc -p .",
     "pretest": "tslint \"src/**/*.ts\" \"test/**/*.ts\" && tsc -p ./",
-    "test": "./node_modules/.bin/mocha --reporter spec test/**/*.js",
+    "test": "echo \"Warning: no Tests\"",
     "preversion": "npm test",
     "version": "npm run build",
     "postversion": "git push && git push --tags",
