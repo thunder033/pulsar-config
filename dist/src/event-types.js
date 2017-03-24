@@ -18,6 +18,7 @@ const enum_1 = require("./enum");
  * @property serverPong
  * @property clientPing
  * @property clientPong
+ * @property requestRooms
  */
 exports.IOEvent = enum_1.Enum([
     'connect',
@@ -34,6 +35,7 @@ exports.IOEvent = enum_1.Enum([
     'serverPong',
     'clientPing',
     'clientPong',
+    'requestRooms',
 ]);
 /**
  * @property requestMatch

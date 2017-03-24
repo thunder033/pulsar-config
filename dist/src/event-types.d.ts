@@ -13,6 +13,7 @@
  * @property serverPong
  * @property clientPing
  * @property clientPong
+ * @property requestRooms
  */
 export declare const IOEvent: {
     connect: "connect";
@@ -29,6 +30,7 @@ export declare const IOEvent: {
     serverPong: "serverPong";
     clientPing: "clientPing";
     clientPong: "clientPong";
+    requestRooms: "requestRooms";
 };
 /**
  * @property requestMatch

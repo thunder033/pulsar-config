@@ -19,6 +19,7 @@ import {Enum} from './enum';
  * @property serverPong
  * @property clientPing
  * @property clientPong
+ * @property requestRooms
  */
 export const IOEvent = Enum([
     'connect',
@@ -35,6 +36,7 @@ export const IOEvent = Enum([
     'serverPong',
     'clientPing',
     'clientPong',
+    'requestRooms',
 ]);
 
 /**
