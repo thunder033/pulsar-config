@@ -67,10 +67,14 @@ export const MatchEvent = Enum([
 /**
  * @property playStarted
  * @property command
- * @property shipSync
+ * @property pause
+ * @property resume
+ * @property playEnded
  */
 export const GameEvent = Enum([
     'playStarted',
     'command',
-    'shipSync',
+    'pause',
+    'resume',
+    'playEnded',
 ]);
