@@ -21,9 +21,26 @@ export class ShipEngine {
     public static readonly SNAP_DELTA: number = 0.03; // 3% of lane width
 }
 
+export enum DataType {
+    'String',
+    'Float',
+    'Double',
+    'Int8',
+    'Int16',
+    'Int32',
+}
+
+export const ByteSizes: Map<DataType, number> = new Map<DataType, number>([
+    [DataType.Float, 4],
+    [DataType.Double, 8],
+    [DataType.Int8, 1],
+    [DataType.Int16, 2],
+    [DataType.Int32, 4],
+]);
+
 export class DataFormat {
-    public static readonly SHIP: Map<string, number> = new Map([
-        ['timestamp', 36],
-        ['positionX', 44],
+    public static readonly SHIP: Map<string, DataType> = new Map([
+        ['timestamp', DataType.Double],
+        ['positionX', DataType.Float],
     ]);
 }
