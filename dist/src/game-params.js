@@ -39,6 +39,10 @@ exports.ByteSizes = new Map([
 ]);
 class DataFormat {
 }
+DataFormat.NETWORK_ENTITY = new Map([
+    ['id:36', DataType.String],
+    ['type:20', DataType.String],
+]);
 DataFormat.SHIP = new Map([
     ['timestamp', DataType.Double],
     ['positionX', DataType.Float],

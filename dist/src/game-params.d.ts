@@ -27,5 +27,6 @@ export declare enum DataType {
 }
 export declare const ByteSizes: Map<DataType, number>;
 export declare class DataFormat {
+    static readonly NETWORK_ENTITY: Map<string, DataType>;
     static readonly SHIP: Map<string, DataType>;
 }

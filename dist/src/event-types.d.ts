@@ -59,10 +59,14 @@ export declare const MatchEvent: {
 /**
  * @property playStarted
  * @property command
- * @property shipSync
+ * @property pause
+ * @property resume
+ * @property playEnded
  */
 export declare const GameEvent: {
     playStarted: "playStarted";
     command: "command";
-    shipSync: "shipSync";
+    pause: "pause";
+    resume: "resume";
+    playEnded: "playEnded";
 };

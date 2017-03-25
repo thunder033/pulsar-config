@@ -64,11 +64,15 @@ exports.MatchEvent = enum_1.Enum([
 /**
  * @property playStarted
  * @property command
- * @property shipSync
+ * @property pause
+ * @property resume
+ * @property playEnded
  */
 exports.GameEvent = enum_1.Enum([
     'playStarted',
     'command',
-    'shipSync',
+    'pause',
+    'resume',
+    'playEnded',
 ]);
 //# sourceMappingURL=event-types.js.map
