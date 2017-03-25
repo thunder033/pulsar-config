@@ -17,6 +17,15 @@ export declare class ShipEngine {
     static readonly MOVE_SPEED: number;
     static readonly SNAP_DELTA: number;
 }
+export declare enum DataType {
+    'String' = 0,
+    'Float' = 1,
+    'Double' = 2,
+    'Int8' = 3,
+    'Int16' = 4,
+    'Int32' = 5,
+}
+export declare const ByteSizes: Map<DataType, number>;
 export declare class DataFormat {
-    static readonly SHIP: Map<string, number>;
+    static readonly SHIP: Map<string, DataType>;
 }
