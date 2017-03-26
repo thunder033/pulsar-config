@@ -1,4 +1,3 @@
-import {Enum} from './enum';
 /**
  * Created by Greg on 3/24/2017.
  */
@@ -12,7 +11,7 @@ import {Enum} from './enum';
  * @property Player
  * @property WarpField
  */
-export const EntityTypes = Enum([
+export enum EntityType {
     'Room',
     'Match',
     'Ship',
@@ -20,4 +19,4 @@ export const EntityTypes = Enum([
     'Simulation',
     'Player',
     'WarpField',
-]);
+}

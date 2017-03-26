@@ -1,8 +1,7 @@
-"use strict";
-const enum_1 = require("./enum");
 /**
  * Created by Greg on 3/24/2017.
  */
+"use strict";
 /**
  * @property Room
  * @property Match
@@ -12,13 +11,14 @@ const enum_1 = require("./enum");
  * @property Player
  * @property WarpField
  */
-exports.EntityTypes = enum_1.Enum([
-    'Room',
-    'Match',
-    'Ship',
-    'Client',
-    'Simulation',
-    'Player',
-    'WarpField',
-]);
+var EntityType;
+(function (EntityType) {
+    EntityType[EntityType["Room"] = 0] = "Room";
+    EntityType[EntityType["Match"] = 1] = "Match";
+    EntityType[EntityType["Ship"] = 2] = "Ship";
+    EntityType[EntityType["Client"] = 3] = "Client";
+    EntityType[EntityType["Simulation"] = 4] = "Simulation";
+    EntityType[EntityType["Player"] = 5] = "Player";
+    EntityType[EntityType["WarpField"] = 6] = "WarpField";
+})(EntityType = exports.EntityType || (exports.EntityType = {}));
 //# sourceMappingURL=entity-types.js.map

@@ -10,12 +10,12 @@
  * @property Player
  * @property WarpField
  */
-export declare const EntityTypes: {
-    Room: "Room";
-    Match: "Match";
-    Ship: "Ship";
-    Client: "Client";
-    Simulation: "Simulation";
-    Player: "Player";
-    WarpField: "WarpField";
-};
+export declare enum EntityType {
+    'Room' = 0,
+    'Match' = 1,
+    'Ship' = 2,
+    'Client' = 3,
+    'Simulation' = 4,
+    'Player' = 5,
+    'WarpField' = 6,
+}
