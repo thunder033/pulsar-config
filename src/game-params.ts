@@ -41,7 +41,7 @@ export const ByteSizes: Map<DataType, number> = new Map<DataType, number>([
 export class DataFormat {
     public static readonly NETWORK_ENTITY: Map<string, DataType> = new Map([
         ['id:36', DataType.String],
-        ['type:20', DataType.String],
+        ['type', DataType.Int8],
     ]);
 
     public static readonly SHIP: Map<string, DataType> = new Map([
