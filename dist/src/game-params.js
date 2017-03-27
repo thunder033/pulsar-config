@@ -48,6 +48,7 @@ DataFormat.SHIP = new Map([
     ['positionX', DataType.Float],
 ]);
 DataFormat.WARP_DRIVE = new Map([
+    ['timestamp', DataType.Double],
     ['sliceIndex', DataType.Int16],
     ['barOffset', DataType.Double],
     ['stateValue', DataType.Int8],
