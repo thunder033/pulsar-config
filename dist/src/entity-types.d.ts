@@ -9,6 +9,7 @@
  * @property Simulation
  * @property Player
  * @property WarpField
+ * @property WarpDrive
  */
 export declare enum EntityType {
     'Room' = 0,
@@ -18,4 +19,5 @@ export declare enum EntityType {
     'Simulation' = 4,
     'Player' = 5,
     'WarpField' = 6,
+    'WarpDrive' = 7,
 }
