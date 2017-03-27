@@ -47,5 +47,10 @@ DataFormat.SHIP = new Map([
     ['timestamp', DataType.Double],
     ['positionX', DataType.Float],
 ]);
+DataFormat.WARP_DRIVE = new Map([
+    ['sliceIndex', DataType.Int16],
+    ['barOffset', DataType.Double],
+    ['stateValue', DataType.Int8],
+]);
 exports.DataFormat = DataFormat;
 //# sourceMappingURL=game-params.js.map

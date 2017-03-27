@@ -48,4 +48,10 @@ export class DataFormat {
         ['timestamp', DataType.Double],
         ['positionX', DataType.Float],
     ]);
+
+    public static readonly WARP_DRIVE: Map<string, DataType> = new Map([
+        ['sliceIndex', DataType.Int16],
+        ['barOffset', DataType.Double],
+        ['stateValue', DataType.Int8],
+    ]);
 }
