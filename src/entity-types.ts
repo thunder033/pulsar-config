@@ -11,6 +11,7 @@
  * @property Player
  * @property WarpField
  * @property WarpDrive
+ * @property Avatar
  */
 export enum EntityType {
     'Room',
@@ -21,4 +22,5 @@ export enum EntityType {
     'Player',
     'WarpField',
     'WarpDrive',
+    'Avatar',
 }
