@@ -55,4 +55,11 @@ export class DataFormat {
         ['barOffset', DataType.Double],
         ['stateValue', DataType.Int8],
     ]);
+
+    public static readonly POSITION: Map<string, DataType> = new Map([
+        ['timestamp', DataType.Double],
+        ['positionX', DataType.Float],
+        ['positionY', DataType.Float],
+        ['positionZ', DataType.Float],
+    ]);
 }

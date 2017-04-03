@@ -53,5 +53,11 @@ DataFormat.WARP_DRIVE = new Map([
     ['barOffset', DataType.Double],
     ['stateValue', DataType.Int8],
 ]);
+DataFormat.POSITION = new Map([
+    ['timestamp', DataType.Double],
+    ['positionX', DataType.Float],
+    ['positionY', DataType.Float],
+    ['positionZ', DataType.Float],
+]);
 exports.DataFormat = DataFormat;
 //# sourceMappingURL=game-params.js.map
