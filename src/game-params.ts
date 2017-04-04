@@ -31,7 +31,7 @@ export enum DataType {
 }
 
 export class DriveParams {
-    public static readonly RENDER_OFFSER: number = 2;
+    public static readonly RENDER_OFFSET: number = 2;
     public static readonly LEVEL_BUFFER_START: number = 8000;
     public static readonly LEVEL_BUFFER_END: number = 500;
 }

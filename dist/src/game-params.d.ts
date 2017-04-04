@@ -26,7 +26,7 @@ export declare enum DataType {
     'Int32' = 5,
 }
 export declare class DriveParams {
-    static readonly RENDER_OFFSER: number;
+    static readonly RENDER_OFFSET: number;
     static readonly LEVEL_BUFFER_START: number;
     static readonly LEVEL_BUFFER_END: number;
 }

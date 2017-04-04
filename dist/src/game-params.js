@@ -32,7 +32,7 @@ var DataType;
 })(DataType = exports.DataType || (exports.DataType = {}));
 class DriveParams {
 }
-DriveParams.RENDER_OFFSER = 2;
+DriveParams.RENDER_OFFSET = 2;
 DriveParams.LEVEL_BUFFER_START = 8000;
 DriveParams.LEVEL_BUFFER_END = 500;
 exports.DriveParams = DriveParams;
