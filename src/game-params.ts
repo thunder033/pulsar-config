@@ -30,6 +30,21 @@ export enum DataType {
     'Int32',
 }
 
+export class DriveParams {
+    public static readonly RENDER_OFFSER: number = 2;
+    public static readonly LEVEL_BUFFER_START: number = 8000;
+    public static readonly LEVEL_BUFFER_END: number = 500;
+}
+
+export class SliceBar {
+    public static readonly scaleX: number = 1.5;
+    public static readonly scaleY: number = 1;
+    public static readonly scaleZ: number = 0.9;
+
+    // The distance between each bar
+    public static readonly margin: number = 0.1;
+}
+
 export const ByteSizes: Map<DataType, number> = new Map<DataType, number>([
     [DataType.Float, 4],
     [DataType.Double, 8],

@@ -30,6 +30,20 @@ var DataType;
     DataType[DataType["Int16"] = 4] = "Int16";
     DataType[DataType["Int32"] = 5] = "Int32";
 })(DataType = exports.DataType || (exports.DataType = {}));
+class DriveParams {
+}
+DriveParams.RENDER_OFFSER = 2;
+DriveParams.LEVEL_BUFFER_START = 8000;
+DriveParams.LEVEL_BUFFER_END = 500;
+exports.DriveParams = DriveParams;
+class SliceBar {
+}
+SliceBar.scaleX = 1.5;
+SliceBar.scaleY = 1;
+SliceBar.scaleZ = 0.9;
+// The distance between each bar
+SliceBar.margin = 0.1;
+exports.SliceBar = SliceBar;
 exports.ByteSizes = new Map([
     [DataType.Float, 4],
     [DataType.Double, 8],

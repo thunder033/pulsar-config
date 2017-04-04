@@ -25,6 +25,17 @@ export declare enum DataType {
     'Int16' = 4,
     'Int32' = 5,
 }
+export declare class DriveParams {
+    static readonly RENDER_OFFSER: number;
+    static readonly LEVEL_BUFFER_START: number;
+    static readonly LEVEL_BUFFER_END: number;
+}
+export declare class SliceBar {
+    static readonly scaleX: number;
+    static readonly scaleY: number;
+    static readonly scaleZ: number;
+    static readonly margin: number;
+}
 export declare const ByteSizes: Map<DataType, number>;
 export declare class DataFormat {
     static readonly NETWORK_ENTITY: Map<string, DataType>;
