@@ -27,6 +27,13 @@ DriveParams.RENDER_OFFSET = 2;
 DriveParams.LEVEL_BUFFER_START = 6000;
 DriveParams.LEVEL_BUFFER_END = 1500;
 exports.DriveParams = DriveParams;
+var Gem;
+(function (Gem) {
+    Gem[Gem["NONE"] = 0] = "NONE";
+    Gem[Gem["GREEN"] = 1] = "GREEN";
+    Gem[Gem["COLLECTED"] = 2] = "COLLECTED";
+    Gem[Gem["BLACK"] = 3] = "BLACK";
+})(Gem = exports.Gem || (exports.Gem = {}));
 /**
  * Parameters that determine the size of loudness bars rendered along the
  * track
@@ -68,6 +75,10 @@ exports.ByteSizes = new Map([
  *
  * In each entry, the key is the field name, with an additional size parameter denoted
  * by a colon: field:size. For String fields, the size is required.
+ *
+ * The second parameter is the type of data stored in the field. This can either be
+ * a primitive DataType, or an array that indicates the Data Type and length
+ * as such [{DataType}, {length}]
  */
 class DataFormat {
 }
@@ -90,6 +101,11 @@ DataFormat.POSITION = new Map([
     ['positionX', DataType.Float],
     ['positionY', DataType.Float],
     ['positionZ', DataType.Float],
+]);
+DataFormat.SLICE_UPDATE = new Map([
+    ['timestamp', DataType.Double],
+    ['sliceIndex', DataType.Int16],
+    ['gems', [DataType.Int8, Track.NUM_LANES]],
 ]);
 exports.DataFormat = DataFormat;
 //# sourceMappingURL=game-params.js.map

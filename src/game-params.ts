@@ -27,6 +27,13 @@ export class DriveParams {
     public static readonly LEVEL_BUFFER_END: number = 1500;
 }
 
+export enum Gem {
+    'NONE',
+    'GREEN',
+    'COLLECTED',
+    'BLACK',
+}
+
 /**
  * Parameters that determine the size of loudness bars rendered along the
  * track
@@ -64,35 +71,46 @@ export const ByteSizes: Map<DataType, number> = new Map<DataType, number>([
     [DataType.Int32, 4],
 ]);
 
+export type FieldType = DataType | Array<DataType | number>;
 /**
  * Listing of fields for syncing various network entities. These are Map instances because
  * they *must* be ordered (Maps preserve insertion order during iteration)
  *
  * In each entry, the key is the field name, with an additional size parameter denoted
  * by a colon: field:size. For String fields, the size is required.
+ *
+ * The second parameter is the type of data stored in the field. This can either be
+ * a primitive DataType, or an array that indicates the Data Type and length
+ * as such [{DataType}, {length}]
  */
 export class DataFormat {
-    public static readonly NETWORK_ENTITY: Map<string, DataType> = new Map([
+    public static readonly NETWORK_ENTITY: Map<string, FieldType> = new Map([
         ['id:36', DataType.String],
         ['type', DataType.Int8],
     ]);
 
-    public static readonly SHIP: Map<string, DataType> = new Map([
+    public static readonly SHIP: Map<string, FieldType> = new Map([
         ['timestamp', DataType.Double],
         ['positionX', DataType.Float],
     ]);
 
-    public static readonly WARP_DRIVE: Map<string, DataType> = new Map([
+    public static readonly WARP_DRIVE: Map<string, FieldType> = new Map([
         ['timestamp', DataType.Double],
         ['sliceIndex', DataType.Int16],
         ['barOffset', DataType.Double],
         ['stateValue', DataType.Int8],
     ]);
 
-    public static readonly POSITION: Map<string, DataType> = new Map([
+    public static readonly POSITION: Map<string, FieldType> = new Map([
         ['timestamp', DataType.Double],
         ['positionX', DataType.Float],
         ['positionY', DataType.Float],
         ['positionZ', DataType.Float],
+    ]);
+
+    public static readonly SLICE_UPDATE: Map<string, FieldType> = new Map<string, FieldType>([
+        ['timestamp', DataType.Double],
+        ['sliceIndex', DataType.Int16],
+        ['gems', [DataType.Int8, Track.NUM_LANES]],
     ]);
 }

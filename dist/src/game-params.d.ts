@@ -22,6 +22,12 @@ export declare class DriveParams {
     static readonly LEVEL_BUFFER_START: number;
     static readonly LEVEL_BUFFER_END: number;
 }
+export declare enum Gem {
+    'NONE' = 0,
+    'GREEN' = 1,
+    'COLLECTED' = 2,
+    'BLACK' = 3,
+}
 /**
  * Parameters that determine the size of loudness bars rendered along the
  * track
@@ -48,16 +54,22 @@ export declare enum DataType {
  * @type {Map<DataType, number>}
  */
 export declare const ByteSizes: Map<DataType, number>;
+export declare type FieldType = DataType | Array<DataType | number>;
 /**
  * Listing of fields for syncing various network entities. These are Map instances because
  * they *must* be ordered (Maps preserve insertion order during iteration)
  *
  * In each entry, the key is the field name, with an additional size parameter denoted
  * by a colon: field:size. For String fields, the size is required.
+ *
+ * The second parameter is the type of data stored in the field. This can either be
+ * a primitive DataType, or an array that indicates the Data Type and length
+ * as such [{DataType}, {length}]
  */
 export declare class DataFormat {
-    static readonly NETWORK_ENTITY: Map<string, DataType>;
-    static readonly SHIP: Map<string, DataType>;
-    static readonly WARP_DRIVE: Map<string, DataType>;
-    static readonly POSITION: Map<string, DataType>;
+    static readonly NETWORK_ENTITY: Map<string, FieldType>;
+    static readonly SHIP: Map<string, FieldType>;
+    static readonly WARP_DRIVE: Map<string, FieldType>;
+    static readonly POSITION: Map<string, FieldType>;
+    static readonly SLICE_UPDATE: Map<string, FieldType>;
 }
