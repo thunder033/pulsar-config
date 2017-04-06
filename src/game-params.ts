@@ -72,6 +72,7 @@ export const ByteSizes: Map<DataType, number> = new Map<DataType, number>([
 ]);
 
 export type FieldType = DataType | Array<DataType | number>;
+export type BufferFormat = Map<string, FieldType>;
 /**
  * Listing of fields for syncing various network entities. These are Map instances because
  * they *must* be ordered (Maps preserve insertion order during iteration)
@@ -84,31 +85,31 @@ export type FieldType = DataType | Array<DataType | number>;
  * as such [{DataType}, {length}]
  */
 export class DataFormat {
-    public static readonly NETWORK_ENTITY: Map<string, FieldType> = new Map([
+    public static readonly NETWORK_ENTITY: BufferFormat = new Map([
         ['id:36', DataType.String],
         ['type', DataType.Int8],
     ]);
 
-    public static readonly SHIP: Map<string, FieldType> = new Map([
+    public static readonly SHIP: BufferFormat = new Map([
         ['timestamp', DataType.Double],
         ['positionX', DataType.Float],
     ]);
 
-    public static readonly WARP_DRIVE: Map<string, FieldType> = new Map([
+    public static readonly WARP_DRIVE: BufferFormat = new Map([
         ['timestamp', DataType.Double],
         ['sliceIndex', DataType.Int16],
         ['barOffset', DataType.Double],
         ['stateValue', DataType.Int8],
     ]);
 
-    public static readonly POSITION: Map<string, FieldType> = new Map([
+    public static readonly POSITION: BufferFormat = new Map([
         ['timestamp', DataType.Double],
         ['positionX', DataType.Float],
         ['positionY', DataType.Float],
         ['positionZ', DataType.Float],
     ]);
 
-    public static readonly SLICE_UPDATE: Map<string, FieldType> = new Map<string, FieldType>([
+    public static readonly SLICE_UPDATE: BufferFormat = new Map<string, FieldType>([
         ['timestamp', DataType.Double],
         ['sliceIndex', DataType.Int16],
         ['gems', [DataType.Int8, Track.NUM_LANES]],

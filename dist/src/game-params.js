@@ -3,6 +3,7 @@
  * Created by Greg on 3/17/2017.
  */
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Track {
 }
 Track.LANE_WIDTH = 1.15;

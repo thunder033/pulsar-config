@@ -55,6 +55,7 @@ export declare enum DataType {
  */
 export declare const ByteSizes: Map<DataType, number>;
 export declare type FieldType = DataType | Array<DataType | number>;
+export declare type BufferFormat = Map<string, FieldType>;
 /**
  * Listing of fields for syncing various network entities. These are Map instances because
  * they *must* be ordered (Maps preserve insertion order during iteration)
@@ -67,9 +68,9 @@ export declare type FieldType = DataType | Array<DataType | number>;
  * as such [{DataType}, {length}]
  */
 export declare class DataFormat {
-    static readonly NETWORK_ENTITY: Map<string, FieldType>;
-    static readonly SHIP: Map<string, FieldType>;
-    static readonly WARP_DRIVE: Map<string, FieldType>;
-    static readonly POSITION: Map<string, FieldType>;
-    static readonly SLICE_UPDATE: Map<string, FieldType>;
+    static readonly NETWORK_ENTITY: BufferFormat;
+    static readonly SHIP: BufferFormat;
+    static readonly WARP_DRIVE: BufferFormat;
+    static readonly POSITION: BufferFormat;
+    static readonly SLICE_UPDATE: BufferFormat;
 }
