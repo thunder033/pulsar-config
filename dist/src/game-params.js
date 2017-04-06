@@ -1,5 +1,5 @@
 /**
- * Share client/server data structures
+ * Shared client/server data structures
  * Created by Greg on 3/17/2017.
  */
 "use strict";
@@ -21,6 +21,27 @@ class ShipEngine {
 ShipEngine.MOVE_SPEED = 0.0045;
 ShipEngine.SNAP_DELTA = 0.03; // 3% of lane width
 exports.ShipEngine = ShipEngine;
+class DriveParams {
+}
+DriveParams.RENDER_OFFSET = 2;
+DriveParams.LEVEL_BUFFER_START = 6000;
+DriveParams.LEVEL_BUFFER_END = 1500;
+exports.DriveParams = DriveParams;
+/**
+ * Parameters that determine the size of loudness bars rendered along the
+ * track
+ */
+class SliceBar {
+}
+SliceBar.scaleX = 1.5;
+SliceBar.scaleY = 1;
+SliceBar.scaleZ = 0.9;
+// The distance between each bar
+SliceBar.margin = 0.1;
+exports.SliceBar = SliceBar;
+/**
+ * Data types supported in a binary buffer constructed through Network Entities
+ */
 var DataType;
 (function (DataType) {
     DataType[DataType["String"] = 0] = "String";
@@ -30,20 +51,10 @@ var DataType;
     DataType[DataType["Int16"] = 4] = "Int16";
     DataType[DataType["Int32"] = 5] = "Int32";
 })(DataType = exports.DataType || (exports.DataType = {}));
-class DriveParams {
-}
-DriveParams.RENDER_OFFSET = 2;
-DriveParams.LEVEL_BUFFER_START = 8000;
-DriveParams.LEVEL_BUFFER_END = 500;
-exports.DriveParams = DriveParams;
-class SliceBar {
-}
-SliceBar.scaleX = 1.5;
-SliceBar.scaleY = 1;
-SliceBar.scaleZ = 0.9;
-// The distance between each bar
-SliceBar.margin = 0.1;
-exports.SliceBar = SliceBar;
+/**
+ * The number of bytes each data type in a buffer occupies
+ * @type {Map<DataType, number>}
+ */
 exports.ByteSizes = new Map([
     [DataType.Float, 4],
     [DataType.Double, 8],
@@ -51,6 +62,13 @@ exports.ByteSizes = new Map([
     [DataType.Int16, 2],
     [DataType.Int32, 4],
 ]);
+/**
+ * Listing of fields for syncing various network entities. These are Map instances because
+ * they *must* be ordered (Maps preserve insertion order during iteration)
+ *
+ * In each entry, the key is the field name, with an additional size parameter denoted
+ * by a colon: field:size. For String fields, the size is required.
+ */
 class DataFormat {
 }
 DataFormat.NETWORK_ENTITY = new Map([
