@@ -88,29 +88,27 @@ export class DataFormat {
     public static readonly NETWORK_ENTITY: BufferFormat = new Map([
         ['id:36', DataType.String],
         ['type', DataType.Int8],
+        ['timestamp', DataType.Double],
+        ['format', DataType.Int8],
     ]);
 
     public static readonly SHIP: BufferFormat = new Map([
-        ['timestamp', DataType.Double],
         ['positionX', DataType.Float],
     ]);
 
     public static readonly WARP_DRIVE: BufferFormat = new Map([
-        ['timestamp', DataType.Double],
         ['sliceIndex', DataType.Int16],
         ['barOffset', DataType.Double],
         ['stateValue', DataType.Int8],
     ]);
 
     public static readonly POSITION: BufferFormat = new Map([
-        ['timestamp', DataType.Double],
         ['positionX', DataType.Float],
         ['positionY', DataType.Float],
         ['positionZ', DataType.Float],
     ]);
 
     public static readonly SLICE_UPDATE: BufferFormat = new Map<string, FieldType>([
-        ['timestamp', DataType.Double],
         ['sliceIndex', DataType.Int16],
         ['gems', [DataType.Int8, Track.NUM_LANES]],
     ]);

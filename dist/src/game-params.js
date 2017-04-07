@@ -3,7 +3,6 @@
  * Created by Greg on 3/17/2017.
  */
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 class Track {
 }
 Track.LANE_WIDTH = 1.15;
@@ -86,25 +85,23 @@ class DataFormat {
 DataFormat.NETWORK_ENTITY = new Map([
     ['id:36', DataType.String],
     ['type', DataType.Int8],
+    ['timestamp', DataType.Double],
+    ['format', DataType.Int8],
 ]);
 DataFormat.SHIP = new Map([
-    ['timestamp', DataType.Double],
     ['positionX', DataType.Float],
 ]);
 DataFormat.WARP_DRIVE = new Map([
-    ['timestamp', DataType.Double],
     ['sliceIndex', DataType.Int16],
     ['barOffset', DataType.Double],
     ['stateValue', DataType.Int8],
 ]);
 DataFormat.POSITION = new Map([
-    ['timestamp', DataType.Double],
     ['positionX', DataType.Float],
     ['positionY', DataType.Float],
     ['positionZ', DataType.Float],
 ]);
 DataFormat.SLICE_UPDATE = new Map([
-    ['timestamp', DataType.Double],
     ['sliceIndex', DataType.Int16],
     ['gems', [DataType.Int8, Track.NUM_LANES]],
 ]);
