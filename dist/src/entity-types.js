@@ -12,6 +12,7 @@
  * @property WarpField
  * @property WarpDrive
  * @property Avatar
+ * @property Song
  */
 var EntityType;
 (function (EntityType) {
@@ -24,5 +25,6 @@ var EntityType;
     EntityType[EntityType["WarpField"] = 6] = "WarpField";
     EntityType[EntityType["WarpDrive"] = 7] = "WarpDrive";
     EntityType[EntityType["Avatar"] = 8] = "Avatar";
+    EntityType[EntityType["Song"] = 9] = "Song";
 })(EntityType = exports.EntityType || (exports.EntityType = {}));
 //# sourceMappingURL=entity-types.js.map
