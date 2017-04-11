@@ -54,8 +54,11 @@ export declare enum DataType {
  * @type {Map<DataType, number>}
  */
 export declare const ByteSizes: Map<DataType, number>;
-export declare type FieldType = DataType | Array<DataType | number>;
+export declare type FieldType = DataType | number;
 export declare type BufferFormat = Map<string, FieldType>;
+export declare const TYPE_MASK = 15;
+export declare const SIZE_MASK = 65520;
+export declare const NUM_TYPE_BITS = 4;
 /**
  * Listing of fields for syncing various network entities. These are Map instances because
  * they *must* be ordered (Maps preserve insertion order during iteration)

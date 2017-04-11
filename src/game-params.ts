@@ -71,8 +71,20 @@ export const ByteSizes: Map<DataType, number> = new Map<DataType, number>([
     [DataType.Int32, 4],
 ]);
 
-export type FieldType = DataType | Array<DataType | number>;
+export type FieldType = DataType | number;
 export type BufferFormat = Map<string, FieldType>;
+export const TYPE_MASK = 0b0000000000001111;
+export const SIZE_MASK = 0b1111111111110000;
+export const NUM_TYPE_BITS = 4;
+
+function overrideSize(type: DataType, size: number) {
+    return type | size << NUM_TYPE_BITS;
+}
+
+function bufferArray(type: DataType, size: number) {
+    return ~(type | size << NUM_TYPE_BITS);
+}
+
 /**
  * Listing of fields for syncing various network entities. These are Map instances because
  * they *must* be ordered (Maps preserve insertion order during iteration)
@@ -86,7 +98,7 @@ export type BufferFormat = Map<string, FieldType>;
  */
 export class DataFormat {
     public static readonly NETWORK_ENTITY: BufferFormat = new Map([
-        ['id:36', DataType.String],
+        ['id', overrideSize(DataType.String, 36)],
         ['type', DataType.Int8],
         ['timestamp', DataType.Double],
         ['format', DataType.Int8],
@@ -110,6 +122,6 @@ export class DataFormat {
 
     public static readonly SLICE_UPDATE: BufferFormat = new Map<string, FieldType>([
         ['sliceIndex', DataType.Int16],
-        ['gems', [DataType.Int8, Track.NUM_LANES]],
+        ['gems', bufferArray(DataType.Int8, Track.NUM_LANES)],
     ]);
 }
