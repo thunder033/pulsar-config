@@ -86,6 +86,39 @@ function bufferArray(type: DataType, size: number) {
 }
 
 /**
+ * Parse or look up the field size from the binary data type
+ * @param type {number}: binary data type represented as described in pulsar-lib
+ * @returns {number}: The number of bytes the field will consume
+ */
+export function getFieldSize(type: DataType): number {
+    // A type larger than type mask has an overridden size (or is a string)
+    if (type > TYPE_MASK) {
+        // Mask the type and shift right
+        return (type & SIZE_MASK) >> NUM_TYPE_BITS;
+    } else if (type < 0) {
+        // A negative type indicates an array
+        // Parse the type code (negate and mask the size)
+        const typeCode = (~type) & TYPE_MASK;
+        // Get the number of elements in the array (negate, mask, shift)
+        const numElems = (~type) & SIZE_MASK >> NUM_TYPE_BITS;
+        return ByteSizes.get(typeCode) * numElems;
+    } else {
+        // If we get here, it's a plain type code
+        return ByteSizes.get(type);
+    }
+}
+
+/**
+ * Parse the primitive data type (Int8, Float, etc.) from the complex data type
+ * @param type {number}: binary data type represented as described in pulsar-lib
+ * @returns {number}
+ */
+export function getPrimitiveType(type: DataType) {
+    // Get the absolute value of the type and mask the size
+    return ((type >> 31) ^ type) & TYPE_MASK;
+}
+
+/**
  * Listing of fields for syncing various network entities. These are Map instances because
  * they *must* be ordered (Maps preserve insertion order during iteration)
  *

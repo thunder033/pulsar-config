@@ -60,6 +60,18 @@ export declare const TYPE_MASK = 15;
 export declare const SIZE_MASK = 65520;
 export declare const NUM_TYPE_BITS = 4;
 /**
+ * Parse or look up the field size from the binary data type
+ * @param type {number}: binary data type represented as described in pulsar-lib
+ * @returns {number}: The number of bytes the field will consume
+ */
+export declare function getFieldSize(type: DataType): number;
+/**
+ * Parse the primitive data type (Int8, Float, etc.) from the complex data type
+ * @param type {number}: binary data type represented as described in pulsar-lib
+ * @returns {number}
+ */
+export declare function getPrimitiveType(type: DataType): number;
+/**
  * Listing of fields for syncing various network entities. These are Map instances because
  * they *must* be ordered (Maps preserve insertion order during iteration)
  *
