@@ -68,6 +68,8 @@ export declare const MatchEvent: {
  * @property playEnded
  */
 export declare const GameEvent: {
+    clientLoaded: "clientLoaded";
+    clientsReady: "clientsReady";
     playStarted: "playStarted";
     command: "command";
     pause: "pause";

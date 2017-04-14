@@ -76,6 +76,8 @@ export const MatchEvent = Enum([
  * @property playEnded
  */
 export const GameEvent = Enum([
+    'clientLoaded',
+    'clientsReady',
     'playStarted',
     'command',
     'pause',

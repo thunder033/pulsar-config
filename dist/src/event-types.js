@@ -73,6 +73,8 @@ exports.MatchEvent = enum_1.Enum([
  * @property playEnded
  */
 exports.GameEvent = enum_1.Enum([
+    'clientLoaded',
+    'clientsReady',
     'playStarted',
     'command',
     'pause',
