@@ -1,6 +1,6 @@
 {
   "name": "pulsar-lib",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Configuration values and functionality shared by pulsar-api and pulsar-ui",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
