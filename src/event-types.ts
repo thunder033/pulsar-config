@@ -50,6 +50,8 @@ export const IOEvent = Enum([
  * @property matchStarted
  * @property requestEnd
  * @property matchEnded
+ * @property setSong
+ * @property uploadLevel
  */
 export const MatchEvent = Enum([
     'requestMatch',
@@ -62,6 +64,8 @@ export const MatchEvent = Enum([
     'matchStarted',
     'requestEnd',
     'matchEnded',
+    'setSong',
+    'uploadLevel',
 ]);
 
 /**

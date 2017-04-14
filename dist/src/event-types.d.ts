@@ -43,6 +43,8 @@ export declare const IOEvent: {
  * @property matchStarted
  * @property requestEnd
  * @property matchEnded
+ * @property setSong
+ * @property uploadLevel
  */
 export declare const MatchEvent: {
     requestMatch: "requestMatch";
@@ -55,6 +57,8 @@ export declare const MatchEvent: {
     matchStarted: "matchStarted";
     requestEnd: "requestEnd";
     matchEnded: "matchEnded";
+    setSong: "setSong";
+    uploadLevel: "uploadLevel";
 };
 /**
  * @property playStarted

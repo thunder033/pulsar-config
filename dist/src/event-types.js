@@ -48,6 +48,8 @@ exports.IOEvent = enum_1.Enum([
  * @property matchStarted
  * @property requestEnd
  * @property matchEnded
+ * @property setSong
+ * @property uploadLevel
  */
 exports.MatchEvent = enum_1.Enum([
     'requestMatch',
@@ -60,6 +62,8 @@ exports.MatchEvent = enum_1.Enum([
     'matchStarted',
     'requestEnd',
     'matchEnded',
+    'setSong',
+    'uploadLevel',
 ]);
 /**
  * @property playStarted
