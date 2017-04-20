@@ -5,10 +5,10 @@
     "sourceMap": true,
     "experimentalDecorators": true,
     "declaration": true,
-    "outDir": "./dist",
-    "noLib": false
+    "outDir": "./dist"
   },
   "exclude": [
+    "test",
     "dist",
     "node_modules"
   ]
