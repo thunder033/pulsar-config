@@ -9,6 +9,8 @@ const EventTypes = require("./src/event-types");
 exports.EventTypes = EventTypes;
 const GameParams = require("./src/game-params");
 exports.GameParams = GameParams;
+const priority_queue_1 = require("./src/priority-queue");
+exports.PriorityQueue = priority_queue_1.PriorityQueue;
 const myVar = 'a';
 console.log(myVar);
 //# sourceMappingURL=index.js.map

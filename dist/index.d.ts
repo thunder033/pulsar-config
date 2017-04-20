@@ -5,4 +5,5 @@
 import { Enum } from './src/enum';
 import * as EventTypes from './src/event-types';
 import * as GameParams from './src/game-params';
-export { EventTypes, Enum, GameParams };
+import { PriorityQueue } from './src/priority-queue';
+export { EventTypes, Enum, GameParams, PriorityQueue };

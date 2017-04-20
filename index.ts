@@ -5,6 +5,7 @@
 import { Enum } from './src/enum';
 import * as EventTypes from './src/event-types';
 import * as GameParams from './src/game-params';
+import { PriorityQueue } from './src/priority-queue';
 
 const myVar = 'a';
 console.log(myVar);
@@ -12,5 +13,6 @@ console.log(myVar);
 export {
     EventTypes,
     Enum,
-    GameParams
+    GameParams,
+    PriorityQueue,
 }
