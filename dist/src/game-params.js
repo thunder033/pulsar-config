@@ -75,9 +75,11 @@ exports.NUM_TYPE_BITS = 4;
 function overrideSize(type, size) {
     return type | size << exports.NUM_TYPE_BITS;
 }
+exports.overrideSize = overrideSize;
 function bufferArray(type, size) {
     return ~(type | size << exports.NUM_TYPE_BITS);
 }
+exports.bufferArray = bufferArray;
 /**
  * Parse or look up the field size from the binary data type
  * @param type {number}: binary data type represented as described in pulsar-lib
@@ -94,7 +96,7 @@ function getFieldSize(type) {
         // Parse the type code (negate and mask the size)
         const typeCode = (~type) & exports.TYPE_MASK;
         // Get the number of elements in the array (negate, mask, shift)
-        const numElems = (~type) & exports.SIZE_MASK >> exports.NUM_TYPE_BITS;
+        const numElems = ((~type) & exports.SIZE_MASK) >> exports.NUM_TYPE_BITS;
         return exports.ByteSizes.get(typeCode) * numElems;
     }
     else {

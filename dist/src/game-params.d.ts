@@ -59,6 +59,8 @@ export declare type BufferFormat = Map<string, FieldType>;
 export declare const TYPE_MASK = 15;
 export declare const SIZE_MASK = 65520;
 export declare const NUM_TYPE_BITS = 4;
+export declare function overrideSize(type: DataType, size: number): number;
+export declare function bufferArray(type: DataType, size: number): number;
 /**
  * Parse or look up the field size from the binary data type
  * @param type {number}: binary data type represented as described in pulsar-lib

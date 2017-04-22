@@ -9,6 +9,7 @@ import {Enum} from './enum';
  * @property serverError
  * @property joinServer
  * @property disconnect
+ * @property reconnect
  * @property roomCreated
  * @property joinedRoom
  * @property leftRoom
@@ -25,6 +26,7 @@ export const IOEvent = Enum([
     'connect',
     'joinServer',
     'disconnect',
+    'reconnect',
     'serverError',
     'roomCreated',
     'joinedRoom',

@@ -113,6 +113,10 @@ export class PriorityQueue {
      * @param item {any}
      */
     public remove(item: any): void {
+        if (this.root === null) {
+            return;
+        }
+
         let node: QueueNode = this.root;
         let prev: QueueNode = null;
         do {

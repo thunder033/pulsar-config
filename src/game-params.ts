@@ -77,11 +77,11 @@ export const TYPE_MASK = 0b0000000000001111;
 export const SIZE_MASK = 0b1111111111110000;
 export const NUM_TYPE_BITS = 4;
 
-function overrideSize(type: DataType, size: number) {
+export function overrideSize(type: DataType, size: number) {
     return type | size << NUM_TYPE_BITS;
 }
 
-function bufferArray(type: DataType, size: number) {
+export function bufferArray(type: DataType, size: number) {
     return ~(type | size << NUM_TYPE_BITS);
 }
 
@@ -100,7 +100,7 @@ export function getFieldSize(type: DataType): number {
         // Parse the type code (negate and mask the size)
         const typeCode = (~type) & TYPE_MASK;
         // Get the number of elements in the array (negate, mask, shift)
-        const numElems = (~type) & SIZE_MASK >> NUM_TYPE_BITS;
+        const numElems = ((~type) & SIZE_MASK) >> NUM_TYPE_BITS;
         return ByteSizes.get(typeCode) * numElems;
     } else {
         // If we get here, it's a plain type code
