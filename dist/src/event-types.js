@@ -8,6 +8,7 @@ const enum_1 = require("./enum");
  * @property serverError
  * @property joinServer
  * @property disconnect
+ * @property reconnect
  * @property roomCreated
  * @property joinedRoom
  * @property leftRoom
@@ -24,6 +25,7 @@ exports.IOEvent = enum_1.Enum([
     'connect',
     'joinServer',
     'disconnect',
+    'reconnect',
     'serverError',
     'roomCreated',
     'joinedRoom',

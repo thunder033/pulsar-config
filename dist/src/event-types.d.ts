@@ -3,6 +3,7 @@
  * @property serverError
  * @property joinServer
  * @property disconnect
+ * @property reconnect
  * @property roomCreated
  * @property joinedRoom
  * @property leftRoom
@@ -19,6 +20,7 @@ export declare const IOEvent: {
     connect: "connect";
     joinServer: "joinServer";
     disconnect: "disconnect";
+    reconnect: "reconnect";
     serverError: "serverError";
     roomCreated: "roomCreated";
     joinedRoom: "joinedRoom";
