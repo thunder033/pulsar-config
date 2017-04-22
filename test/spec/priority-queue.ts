@@ -92,6 +92,8 @@ import { PriorityQueue } from '../../src/priority-queue';
     }
 
     @test 'remove item from the queue'() {
+        this.priorityQueue.remove('item1'); // we should be able to attempt removal if queue is empty
+
         this.priorityQueue.enqueue(0, 'item1');
         this.priorityQueue.enqueue(2, 'item2');
         this.priorityQueue.enqueue(1, 'item3');

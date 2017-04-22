@@ -90,6 +90,9 @@ class PriorityQueue {
      * @param item {any}
      */
     remove(item) {
+        if (this.root === null) {
+            return;
+        }
         let node = this.root;
         let prev = null;
         do {
