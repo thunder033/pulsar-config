@@ -6,7 +6,7 @@
 class Track {
 }
 Track.LANE_WIDTH = 1.15;
-Track.NUM_LANES = 3;
+Track.NUM_LANES = 5;
 Track.POSITION_X = (-Track.NUM_LANES / 2) * Track.LANE_WIDTH;
 Track.WIDTH = Track.LANE_WIDTH * Track.NUM_LANES;
 exports.Track = Track;
