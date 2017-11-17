@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "start": "node ./src/app.js",
     "build": "npm run srcCompile",
     "srcCompile": "tsc -p .",
     "pretest": "tslint \"src/**/*.ts\" \"test/**/*.ts\" && tsc -p ./ && tsc -p ./test",
